@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
 
-function CardMenuList(props) {
+function CardMenuList({shape, title}) {
     return (
         <div className="flex my-2 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 mx-2">
-                <path strokeLinecap="round" strokeLinejoin="round" d={props.shape} />
+                <path strokeLinecap="round" strokeLinejoin="round" d={shape} />
             </svg>
-            <p className="m-0">{props.title}</p>
+            <p className="m-0">{title}</p>
         </div>
     )
 }
