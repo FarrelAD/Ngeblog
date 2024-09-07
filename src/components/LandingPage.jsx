@@ -11,9 +11,9 @@ function LandingPage() {
     }
 
     return (
-        <div className="p-20">
+        <div className="p-20 pb-4">
             <div className="flex justify-between align-middle">
-                <div className="flex flex-col justify-center">
+                <div className="flex flex-col justify-center ml-16">
                     <h1 className="font-bold text-7xl">NGEBLOG.</h1>
                     <p>Mari saling berbagi ide, membantu satu sama lain, dan berikan pengalamanmu semuanya di sini!</p>
                 </div>
