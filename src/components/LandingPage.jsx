@@ -31,7 +31,28 @@ function LandingPage() {
             writerPhotoProfile: 'https://img.freepik.com/free-photo/front-view-man-looking-up-with-copy-space_23-2148946263.jpg?t=st=1725161263~exp=1725164863~hmac=73d0f40c0ce9144b9dae670de191c9291ed3ae40630067eeaf81cadc30e8796a&w=1060',
             blogImageUrl: 'https://i.pcmag.com/imagery/articles/05uthAxgkcAOKdZzRzXfMvf-7..v1617373249.jpg',
             blogWrittenDate: '12 Mar 2024'
-        }
+        },
+        {
+            blogTitle: 'Hal yang Harus Diperhatikan Saat Install Ulang Windows. Pastikan Semuanya Sesuai Biar Data Gak Ilang!',
+            blogWriter: 'Siti Zulaikah',
+            writerPhotoProfile: 'https://img.freepik.com/free-photo/smiley-female-standing-with-arms-crossed_23-2148418540.jpg?t=st=1725684202~exp=1725687802~hmac=192429e652a28c63b8b6f750725021c95b2aeb573d5a035e8efdfa8f0ee3ddcc&w=1060',
+            blogImageUrl: 'https://7datarecovery.com/blog/wp-content/uploads/2023/03/reinstall-windows-without-losing-data.jpg',
+            blogWrittenDate: '02 Feb 2024'
+        },
+        {
+            blogTitle: 'Tips Membeli Mouse Bagi Pekerja Kantoran',
+            blogWriter: 'Mawar Melati',
+            writerPhotoProfile: 'https://img.freepik.com/free-photo/girl_23-2148168311.jpg?t=st=1725684473~exp=1725688073~hmac=964c6e2181cb091e17d53f3378dd15ad34917109ab01125644f21a642aa27e4d&w=1060',
+            blogImageUrl: 'https://s.yimg.com/ny/api/res/1.2/qJSHc5ov0qtBxhEUapsCvA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MA--/https://s.yimg.com/os/creatr-uploaded-images/2021-10/6c0a0da0-269a-11ec-be46-7eeed37a001b',
+            blogWrittenDate: '29 Des 2023'
+        },
+        {
+            blogTitle: 'Membuat Smart IoT untuk Alat Monitoring Tanaman',
+            blogWriter: 'Bejo Aji',
+            writerPhotoProfile: 'https://img.freepik.com/free-photo/front-view-man-looking-up-with-copy-space_23-2148946263.jpg?t=st=1725161263~exp=1725164863~hmac=73d0f40c0ce9144b9dae670de191c9291ed3ae40630067eeaf81cadc30e8796a&w=1060',
+            blogImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7FW_yu-b_ahRRx6zWNt9weK3tlypMIoGMim5kZQfdJFtsh7A_4YBn7v6U5nhjOveiSbw&usqp=CAU',
+            blogWrittenDate: '05 Agt 2024'
+        },
     ]
 
     return (
@@ -47,21 +68,24 @@ function LandingPage() {
                 </svg>
             </div>
 
-            <div id="card-container" className="flex mt-20">
-                {blogContents.map((content, index) => (
-                    <Card 
-                        key={index}
-                        id={index}
-                        isMenuActive={activeMenuCard === index+1}
-                        toggleDetail={toggleDetail}
-                        blogTitle={content.blogTitle}
-                        blogWriter={content.blogWriter}
-                        writerPhotoProfile={content.writerPhotoProfile}
-                        blogImageUrl={content.blogImageUrl}
-                        blogWrittenDate={content.blogWrittenDate}
-                    />
-                ))}
-            </div>
+            <section>
+                <h1 className="- font-bold text-3xl">Teknologi</h1>
+                <div id="card-container" className="grid grid-cols-[repeat(auto-fill,_22rem)] gap-1 auto-rows-[24rem] mt-4">
+                    {blogContents.map((content, index) => (
+                        <Card 
+                            key={index}
+                            id={index}
+                            isMenuActive={activeMenuCard === index}
+                            toggleDetail={toggleDetail}
+                            blogTitle={content.blogTitle}
+                            blogWriter={content.blogWriter}
+                            writerPhotoProfile={content.writerPhotoProfile}
+                            blogImageUrl={content.blogImageUrl}
+                            blogWrittenDate={content.blogWrittenDate}
+                        />
+                    ))}
+                </div>
+            </section>
 
             <Footer />
         </div>
