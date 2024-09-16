@@ -138,7 +138,7 @@ BlogsTopicContainer.propTypes = {
     toggleDetail: PropTypes.func.isRequired,
 }
 
-function LandingPage() {
+function HomePage() {
     const [activeMenuCard, setActiveMenuCard] = useState(null)
 
     const toggleDetail = (id) => {
@@ -191,4 +191,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default HomePage
