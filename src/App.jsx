@@ -3,17 +3,21 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import HomePage from "./pages/HomePage"
 import BlogPage from './pages/BlogPage'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: '/',
+			element: <HomePage />
+		},
+		{
+			path: '/blog/:blogTitle',
+			element: <BlogPage />
+		}
+	],
 	{
-		path: '/',
-		element: <HomePage />
-	},
-	{
-		path: '/blog/:blogTitle',
-		element: <BlogPage />
+		basename: '/Ngeblog/'
 	}
-
-])
+)
 
 function App() {
 	return (
