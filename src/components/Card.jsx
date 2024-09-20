@@ -35,7 +35,7 @@ function Card({id, isMenuActive, toggleDetail, blogTitle, blogWriter, writerPhot
     }
 
     return (
-        <div className="blog-card bg-slate-950 rounded-lg w-80 m-4 shadow-lg shadow-slate-600 hover:cursor-pointer hover:shadow-slate-400 transition-shadow" onClick={navigateDetail}>
+        <div className="mx-auto blog-card bg-slate-950 rounded-lg w-80 m-4 shadow-lg shadow-slate-600 hover:cursor-pointer hover:shadow-slate-400 transition-shadow" onClick={navigateDetail}>
             <img src={blogImageUrl} alt="Card image" className="min-w-full h-48 rounded-t-lg object-cover" />
             <div className="p-4">
                 <h1 className="blog-title font-bold">{blogTitle}</h1>
