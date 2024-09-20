@@ -10,18 +10,18 @@ function BlogPage() {
     if (fullBlogData) {
         return (
             <div className="flex justify-center">
-                <div className="w-9/12 p-12">
-                    <h1 className="text-5xl font-bold">{fullBlogData.blogTitle}</h1>
-                    <div className="flex justify-between px-8 mt-8">
+                <div className="w-9/12 py-4 md:p-12">
+                    <h1 className="text-3xl md:text-5xl font-bold">{fullBlogData.blogTitle}</h1>
+                    <div className="flex justify-between md:px-8 mt-5 md:mt-8">
                         <div className="flex align-middle">
-                            <img src={fullBlogData.writerPhotoProfile} alt="User photo profile" className="mx-8 rounded-full w-12"/>
+                            <img src={fullBlogData.writerPhotoProfile} alt="User photo profile" className="mr-2 md:mx-8 rounded-full w-10 md:w-12 h-10 md:h-12"/>
                             <p>{fullBlogData.blogWriter}</p>
                         </div>
                         <div>
                             {fullBlogData.blogWrittenDate}
                         </div>
                     </div>
-                    <div id="blog-img-container" className="my-4 h-96">
+                    <div id="blog-img-container" className="my-4 h-44 md:h-96">
                         <img src={fullBlogData.blogImageUrl} alt="Blog image" className="w-full h-full"/>
                     </div>
                     <br />
