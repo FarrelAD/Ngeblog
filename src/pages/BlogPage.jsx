@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 
-import { blogContents } from "../seed/data";
+import Navbar from "../components/ThemeButton"
+
+import { blogContents } from "../seed/data"
 
 function BlogPage() {
     const { blogTitle } = useParams();
@@ -10,6 +12,7 @@ function BlogPage() {
     if (fullBlogData) {
         return (
             <div className="flex justify-center">
+                <Navbar />
                 <div className="w-9/12 py-4 md:p-12">
                     <h1 className="text-3xl md:text-5xl font-bold">{fullBlogData.blogTitle}</h1>
                     <div className="flex justify-between md:px-8 mt-5 md:mt-8">

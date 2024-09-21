@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Card from "../components/Card"
 import Footer from "../components/Footer"
+import Navbar from "../components/ThemeButton"
 
 import { blogContents } from "../seed/data"
 
@@ -47,6 +48,7 @@ function HomePage() {
 
     return (
         <div className="p-4 md:p-20 pb-4">
+            <Navbar />
             <div className="md:flex md:justify-between md:align-middle">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-11 md:size-20 h-40 md:h-80 w-40 md:w-80 md:mr-32 order-1 md:order-2 mx-auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />

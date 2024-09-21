@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import HomePage from "./pages/HomePage"
 import BlogPage from './pages/BlogPage'
@@ -20,8 +21,12 @@ const router = createBrowserRouter(
 )
 
 function App() {
+	const theme = useSelector((state) => state.theme.theme)
+
+	const appThemeClass = theme === 'dark' ? 'bg-slate-800 text-white' : 'bg-white text-black'
+
 	return (
-		<div className='bg-slate-800 text-white min-h-screen'>
+		<div className={`${appThemeClass} bg-slate-800 text-white min-h-screen`}>
 			<RouterProvider router={router} />
 		</div>
 	)
