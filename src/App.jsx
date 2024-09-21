@@ -23,10 +23,10 @@ const router = createBrowserRouter(
 function App() {
 	const theme = useSelector((state) => state.theme.theme)
 
-	const appThemeClass = theme === 'dark' ? 'bg-slate-800 text-white' : 'bg-white text-black'
+	const appThemeClass = theme === 'dark' ? 'bg-slate-800 text-white' : 'bg-slate-300 text-black'
 
 	return (
-		<div className={`${appThemeClass} bg-slate-800 text-white min-h-screen`}>
+		<div className={`${appThemeClass} min-h-screen`}>
 			<RouterProvider router={router} />
 		</div>
 	)
