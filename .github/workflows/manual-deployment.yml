@@ -26,7 +26,7 @@ jobs:
       - name: Prepare gh-pages directory
         run: |
           mkdir gh-pages-branch
-          cp -r build/* gh-pages-branch/
+          cp -r dist/* gh-pages-branch/
 
       - name: Deploy to gh-pages branch
         run: |
