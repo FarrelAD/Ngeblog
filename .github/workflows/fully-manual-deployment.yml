@@ -37,7 +37,7 @@ jobs:
       - name: Prepare gh-pages branch folder
         run: |
           mkdir gh-pages
-          cp -r source-code/build/* gh-pages/
+          cp -r source-code/dist/* gh-pages/
           cd gh-pages
           touch .nojekyll
 
