@@ -1,4 +1,4 @@
-name: Manual Deploy React App to GitHub Pages
+name: Semi Manual Deploy React App to GitHub Pages
 
 on:
   workflow_dispatch:
