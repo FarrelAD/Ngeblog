@@ -4,12 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
-    name: Install and Build
+  deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-
-    outputs:
-      build-path: ${{ steps.set-output.outputs.build-path }}
 
     steps:
       - name: Checkout repository
@@ -23,40 +20,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build React app
+      - name: Build the app
         run: npm run build
 
-      - name: Save build path for next job
-        id: set-output
-        run: echo "build-path=build" >> $GITHUB_OUTPUT
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: setup
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Configure Git
+      - name: Prepare gh-pages directory
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Clone gh-pages branch (or create it)
-        run: |
-          git clone --depth 1 --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages-branch || \
-          (mkdir gh-pages-branch && cd gh-pages-branch && git init && git checkout -b gh-pages)
-
-      - name: Copy build files
-        run: |
-          rm -rf gh-pages-branch/*
+          mkdir gh-pages-branch
           cp -r build/* gh-pages-branch/
 
-      - name: Commit and push to gh-pages
+      - name: Deploy to gh-pages branch
         run: |
           cd gh-pages-branch
+          git init
+          git checkout -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Deploy React App to GitHub Pages" || echo "Nothing to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
+          git commit -m "Deploy React App to GitHub Pages"
+          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
